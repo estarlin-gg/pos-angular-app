@@ -1,0 +1,129 @@
+<!-- Summary bar -->
+<div class="row g-3">
+   <div class="col-12">
+     <div class="bg-secondary-subtle p-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <ul class="d-flex gap-5 mb-0">
+        <li>
+            {{ freeTables() }} libres
+        </li>
+        <li>
+            {{ occupiedTables() }} ocupadas
+        </li>
+
+      </ul>
+      <button type="button" class="btn btn-primary" (click)="openCreate()">
+        <!-- <svg lucidePlus [size]="20"></svg> -->
+        Agregar mesa
+      </button>
+    </div>
+   </div>
+</div>
+
+<div class="row g-3 mt-3">
+
+    <div class="col-12 col-lg-8">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
+            @for (table of service.tables(); track table.id) {
+                <app-table-card
+                    [table]="table"
+                    [active]="isSelected(table)"
+                    (selected)="select($event)"
+                />
+            } @empty {
+                <div class="col-12">
+                    <div class="alert alert-secondary mb-0">
+                        {{ service.loading() ? 'Cargando mesas…' : 'No hay mesas para mostrar.' }}
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+        @if (detail(); as table) {
+            <app-table-detail [table]="table" />
+        }
+    </div>
+</div>
+
+<!-- Modal: create table (number and status are assigned automatically) -->
+@if (creating()) {
+    <div
+        class="modal d-block fade show"
+        tabindex="-1"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="createTableTitle"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createTableTitle">Agregar mesa</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        aria-label="Cerrar"
+                        (click)="closeCreate()"
+                    ></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="newTableSize">Tamaño de la mesa (personas)</label>
+                        <input
+                            id="newTableSize"
+                            type="number"
+                            class="form-control"
+                            min="1"
+                            max="50"
+                            [value]="capacityDraft()"
+                            (input)="onCapacityInput($event)"
+                        />
+                        <div class="form-text">Cuántas personas caben en la mesa.</div>
+                        @if (!createValid) {
+                            <div class="invalid-feedback d-block">
+                                Ingresa un tamaño entre 1 y 50.
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <label class="form-label small text-muted mb-1" for="autoTableNumber">
+                                Número de mesa
+                            </label>
+                            <input
+                                id="autoTableNumber"
+                                class="form-control"
+                                [value]="nextNumber()"
+                                disabled
+                            />
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label small text-muted mb-1" for="autoTableStatus">
+                                Estado
+                            </label>
+                            <input id="autoTableStatus" class="form-control" value="Libre" disabled />
+                        </div>
+                    </div>
+                    <div class="form-text mt-2">El número y el estado Libre se asignan automáticamente.</div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="closeCreate()">
+                        Cancelar
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        [disabled]="!createValid"
+                        (click)="createTable()"
+                    >
+                        Crear mesa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show" (click)="closeCreate()"></div>
+}

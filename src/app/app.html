@@ -1,0 +1,30 @@
+<div class="app-layout">
+  <app-sidebar />
+
+  @if (layout.mobileSidebarOpen()) {
+    <div class="sidebar-backdrop d-lg-none" aria-hidden="true" (click)="layout.closeMobileSidebar()"></div>
+  }
+
+  <div class="app-main">
+    <header class="app-topbar border-bottom px-3 px-lg-4">
+      <button
+        type="button"
+        class="btn btn-icon"
+        aria-controls="appSidebar"
+        [attr.aria-expanded]="isDesktop() ? !layout.sidebarCollapsed() : layout.mobileSidebarOpen()"
+        aria-label="Mostrar u ocultar el menú"
+        (click)="layout.toggleSidebar()"
+      >
+        <svg lucideMenu [size]="20"></svg>
+      </button>
+
+      <h1 class="h5 fw-semibold mb-0">{{ pageTitle() }}</h1>
+
+      <span class="ms-auto small text-body-secondary d-none d-md-inline">{{ today }}</span>
+    </header>
+
+    <main class="app-content p-3 p-lg-4">
+      <router-outlet />
+    </main>
+  </div>
+</div>

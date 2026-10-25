@@ -1,0 +1,131 @@
+<aside
+  id="appSidebar"
+  class="d-flex flex-column flex-shrink-0 h-100 w-100 p-3 text-bg-dark"
+  data-bs-theme="dark"
+  aria-label="Menú principal"
+>
+  <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+    <a
+      routerLink="/dashboard"
+      class="d-flex align-items-center gap-2 text-white text-decoration-none"
+      (click)="layout.closeMobileSidebar()"
+    >
+      <span class="brand-mark d-inline-flex align-items-center justify-content-center rounded-3 bg-primary">
+        <svg lucideStore [size]="20"></svg>
+      </span>
+      <span class="fs-5 fw-semibold">POS</span>
+    </a>
+
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-light d-lg-none"
+      aria-label="Cerrar menú"
+      (click)="layout.closeMobileSidebar()"
+    >
+      <svg lucideX [size]="18"></svg>
+    </button>
+  </div>
+
+  <hr />
+
+  <ul class="nav nav-pills flex-column gap-1 mb-auto" (click)="layout.closeMobileSidebar()">
+    <li class="nav-item">
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        class="nav-link text-white d-flex align-items-center gap-2"
+      >
+        <svg lucideLayoutDashboard [size]="18" class="flex-shrink-0"></svg>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        routerLink="/orders"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="nav-link text-white d-flex align-items-center gap-2"
+      >
+        <svg lucideShoppingCart [size]="18" class="flex-shrink-0"></svg>
+        <span>Órdenes</span>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a
+        routerLink="/tables"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="nav-link text-white d-flex align-items-center gap-2"
+      >
+        <svg lucideTable [size]="18" class="flex-shrink-0"></svg>
+        <span>Mesas</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        routerLink="/products"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="nav-link text-white d-flex align-items-center gap-2"
+      >
+        <svg lucidePackage [size]="18" class="flex-shrink-0"></svg>
+        <span>Productos</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        routerLink="/customers"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="nav-link text-white d-flex align-items-center gap-2"
+      >
+        <svg lucideUsers [size]="18" class="flex-shrink-0"></svg>
+        <span>Clientes</span>
+      </a>
+    </li>
+  </ul>
+
+  <hr />
+
+  <div class="dropup">
+    <a
+      href="#"
+      class="d-flex align-items-center gap-2 text-white text-decoration-none dropdown-toggle"
+      id="sidebarUserMenu"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="avatar rounded-circle bg-primary-subtle text-primary fw-semibold d-inline-flex align-items-center justify-content-center flex-shrink-0">
+        AD
+      </span>
+      <span class="text-truncate">
+        <strong class="d-block small">Administrador</strong>
+        <span class="d-block small text-white-50 text-truncate">admin@pos.local</span>
+      </span>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="sidebarUserMenu">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center gap-2">
+          <svg lucideUserRound [size]="16"></svg>
+          Perfil
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center gap-2">
+          <svg lucideSettings [size]="16"></svg>
+          Configuración
+        </button>
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center gap-2">
+          <svg lucideLogOut [size]="16"></svg>
+          Cerrar sesión
+        </button>
+      </li>
+    </ul>
+  </div>
+</aside>

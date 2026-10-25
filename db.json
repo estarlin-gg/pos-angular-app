@@ -1,0 +1,319 @@
+{
+  "tables": [
+    {
+      "id": "1",
+      "number": 1,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "2",
+      "number": 2,
+      "capacity": 4,
+      "guestCount": 3,
+      "status": "occupied",
+      "bill": {
+        "subtotal": 375,
+        "tax": 60,
+        "total": 435,
+        "paid": false
+      },
+      "orders": [
+        {
+          "id": 101,
+          "tableId": 2,
+          "time": "19:10",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Hamburguesa clásica",
+              "quantity": 2,
+              "price": 120
+            },
+            {
+              "product": "Refresco 600ml",
+              "quantity": 2,
+              "price": 35
+            }
+          ],
+          "total": 310
+        },
+        {
+          "id": 102,
+          "tableId": 2,
+          "time": "19:35",
+          "status": "in kitchen",
+          "items": [
+            {
+              "product": "Papas fritas",
+              "quantity": 1,
+              "price": 65
+            }
+          ],
+          "total": 65
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "number": 3,
+      "capacity": 2,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "4",
+      "number": 4,
+      "capacity": 6,
+      "guestCount": 5,
+      "status": "occupied",
+      "bill": {
+        "subtotal": 600,
+        "tax": 96,
+        "total": 696,
+        "paid": false
+      },
+      "orders": [
+        {
+          "id": 103,
+          "tableId": 4,
+          "time": "18:55",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Pizza familiar",
+              "quantity": 1,
+              "price": 260
+            },
+            {
+              "product": "Alitas BBQ",
+              "quantity": 1,
+              "price": 145
+            }
+          ],
+          "total": 405
+        },
+        {
+          "id": 104,
+          "tableId": 4,
+          "time": "19:20",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Cerveza 355ml",
+              "quantity": 2,
+              "price": 55
+            },
+            {
+              "product": "Guacamole con totopos",
+              "quantity": 1,
+              "price": 85
+            }
+          ],
+          "total": 195
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "number": 5,
+      "capacity": 2,
+      "guestCount": 2,
+      "status": "occupied",
+      "bill": {
+        "subtotal": 350,
+        "tax": 56,
+        "total": 406,
+        "paid": false
+      },
+      "orders": [
+        {
+          "id": 105,
+          "tableId": 5,
+          "time": "19:02",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Ensalada César",
+              "quantity": 2,
+              "price": 95
+            },
+            {
+              "product": "Café Americano",
+              "quantity": 2,
+              "price": 40
+            }
+          ],
+          "total": 270
+        },
+        {
+          "id": 106,
+          "tableId": 5,
+          "time": "19:40",
+          "status": "in kitchen",
+          "items": [
+            {
+              "product": "Postre Tiramisú",
+              "quantity": 1,
+              "price": 80
+            }
+          ],
+          "total": 80
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "number": 6,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "7",
+      "number": 7,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "8",
+      "number": 8,
+      "capacity": 8,
+      "guestCount": 6,
+      "status": "occupied",
+      "bill": {
+        "subtotal": 700,
+        "tax": 112,
+        "total": 812,
+        "paid": false
+      },
+      "orders": [
+        {
+          "id": 107,
+          "tableId": 8,
+          "time": "18:45",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Parrillada mixta",
+              "quantity": 1,
+              "price": 380
+            },
+            {
+              "product": "Papas rústicas",
+              "quantity": 2,
+              "price": 60
+            }
+          ],
+          "total": 500
+        },
+        {
+          "id": 108,
+          "tableId": 8,
+          "time": "19:15",
+          "status": "delivered",
+          "items": [
+            {
+              "product": "Refresco 600ml",
+              "quantity": 4,
+              "price": 35
+            },
+            {
+              "product": "Agua natural",
+              "quantity": 2,
+              "price": 30
+            }
+          ],
+          "total": 200
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "number": 9,
+      "capacity": 2,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "10",
+      "number": 10,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "wxWj_fzpoy8",
+      "number": 11,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    },
+    {
+      "id": "mY-xeBozuAw",
+      "number": 12,
+      "capacity": 4,
+      "guestCount": 0,
+      "status": "free",
+      "bill": {
+        "subtotal": 0,
+        "tax": 0,
+        "total": 0,
+        "paid": false
+      },
+      "orders": []
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
